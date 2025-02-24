@@ -1,14 +1,12 @@
-import { Button } from './components/ui/button'
-import { ModeToggle } from './shared/mode-toggle'
+import { Route, Routes } from 'react-router-dom'
+import MainPage from './page/MainPage'
+import NotFoundPage from './page/NotFoundPage'
 
 export default function App() {
-  return (
-    <div>
-      <p className='text-xl'>Salom</p>
-
-<ModeToggle/>
-
-<Button>Salom</Button>
-    </div>
-  )
+	return (
+		<Routes>
+			<Route path='' element={<MainPage />} />
+			<Route path='*' element={<NotFoundPage />} />
+		</Routes>
+	)
 }
