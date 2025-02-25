@@ -10,10 +10,13 @@ import { Movie } from '@/typescript/type'
 
 export function MoviesSlider({ movies }: { movies: Movie[] }) {
 	return (
-		<Carousel className='w-full max-w-6xl mx-auto'>
+		<Carousel className='w-full max-w-7xl mx-auto'>
 			<CarouselContent className='gap-4'>
 				{movies.map(movie => (
-					<CarouselItem key={movie.id} className='md:basis-1/3 lg:basis-1/4'>
+					<CarouselItem
+						key={movie.id}
+						className='basis-5/5 sm:basis-1/2 md:basis-1/3 lg:basis-1/4 xl:basis-1/4'
+					>
 						<div className='p-2'>
 							<Card className='shadow-lg hover:shadow-xl transition-shadow duration-300'>
 								<CardContent className='flex flex-col items-center p-4'>
