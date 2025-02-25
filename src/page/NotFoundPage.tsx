@@ -10,7 +10,9 @@ export default function NotFoundPage() {
 
 	return (
 		<div className='w-full h-screen font-roboto'>
-			<Navbar/>
+			<div className='fixed top-0 left-0 w-full'>
+				<Navbar />
+			</div>
 
 			<div className='max-w-[1150px] px-[15px] mx-auto flex h-screen md:flex-row justify-center flex-col items-center'>
 				<div className='lg:flex-grow md:w-1/2 flex flex-col mb-16 md:mb-0 items-center text-center'>
