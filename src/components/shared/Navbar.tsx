@@ -7,7 +7,7 @@ import SearchInput from '../search/SearchInput'
 
 export default function Navbar() {
 	return (
-		<header className='sticky top-0 z-50 w-full border-b border-gray-200 bg-background shadow-md backdrop-blur supports-[backdrop-filter]:bg-background/80 dark:border-gray-800'>
+		<header className='sticky top-0 z-50 w-full border-b border-gray-200 bg-background shadow-sm backdrop-blur supports-[backdrop-filter]:bg-background/80 dark:border-gray-800'>
 			<div className='max-w-[1800px] mx-auto px-4 sm:px-6 lg:px-10'>
 				<div className='flex h-16 items-center justify-between'>
 					<LogoIcon />
