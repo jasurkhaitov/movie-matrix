@@ -19,6 +19,9 @@ export default function MainPage() {
 	return (
 		<>
 			<Navbar />
+
+			<div className='max-w-[1800px] mx-auto px-4 sm:px-6 lg:px-10'>
+
 			<div className='flex items-center justify-between p-4 md:p-6'>
 				<h2 className='text-2xl font-bold'>Top 250 Movies</h2>
 				<Link to='/movies' className='text-blue-500 hover:underline'>
@@ -33,6 +36,8 @@ export default function MainPage() {
 			) : (
 				<MoviesSlider movies={movies || []} />
 			)}
+			</div>
+
 		</>
 	)
 }
