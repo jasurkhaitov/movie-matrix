@@ -11,9 +11,8 @@ export default function MainPage() {
 
 	useEffect(() => {
 		ApiService.fetching('imdb/top250-movies').then(data => {
-			setMovies(data.data)
+			setMovies(data.data.slice(0, 12))
 			setLoading(false)
-			console.log(data.data)
 		})
 	}, [])
 
