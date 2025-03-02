@@ -20,15 +20,18 @@ export default function MainPage() {
 		<>
 			<Navbar />
 
-			<div className='max-w-[1800px] mx-auto px-4 sm:px-6 lg:px-10'>
-				<div className='flex items-center justify-between p-4 md:p-6'>
+			<div className='max-w-[1800px] mx-auto px-4 sm:px-6 lg:px-10 py-5'>
+				<div className='flex items-center justify-between px-4 md:px-6'>
 					<div className='flex items-center gap-3'>
 						<div className='w-2 h-16 bg-yellow-400 rounded-sm'></div>
 						<h1 className='text-3xl md:text-4xl font-bold text-gray-900 dark:text-gray-100'>
 							Top 250 Movies
 						</h1>
 					</div>
-					<Link to='/movies' className='text-blue-600 dark:text-blue-500 hover:underline'>
+					<Link
+						to='/movies'
+						className='text-blue-600 dark:text-blue-500 hover:underline'
+					>
 						See all →
 					</Link>
 				</div>
