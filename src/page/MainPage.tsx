@@ -1,48 +1,59 @@
-import MoviesPart from '@/components/browse/MoviesPart'
+import BrowseItems from '@/components/browse/BrowseItems'
 import Navbar from '@/components/shared/Navbar'
-import { ApiService } from '@/service/ApiService'
-import { Movie } from '@/typescript/type'
-import { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
 
 export default function MainPage() {
-	const [movies, setMovies] = useState<Movie[] | null>(null)
-	const [loading, setLoading] = useState(true)
-
-	useEffect(() => {
-		ApiService.fetching('imdb/top250-movies').then(data => {
-			setMovies(data.data.slice(0, 12))
-			setLoading(false)
-		})
-	}, [])
-
 	return (
 		<>
 			<Navbar />
 
-			<div className='max-w-[1800px] mx-auto px-4 sm:px-6 lg:px-10 py-5'>
-				<div className='flex items-center justify-between px-4 md:px-6'>
-					<div className='flex items-center gap-3'>
-						<div className='w-2 h-16 bg-yellow-400 rounded-sm'></div>
-						<h1 className='text-3xl md:text-4xl font-bold text-gray-900 dark:text-gray-100'>
-							Top 250 Movies
-						</h1>
-					</div>
-					<Link
-						to='/movies'
-						className='text-blue-600 dark:text-blue-500 hover:underline'
-					>
-						See all →
-					</Link>
+			<div className='max-w-[1800px] mx-auto px-4 sm:px-6 lg:px-10 py-10 space-y-12'>
+				{/* Movies Section */}
+				<div>
+					<h1 className='text-4xl font-extrabold text-gray-900 dark:text-gray-100 mb-6'>
+						Movies
+					</h1>
+					<BrowseItems url='imdb/top250-movies' header='Top 250 Movies' linkToPage='/top-250-movies' />
+					<div className='h-1 bg-gradient-to-r from-transparent via-yellow-500 to-transparent my-10' />
+
+					<BrowseItems url='imdb/top-box-office' header='Top Box Office' linkToPage='/top-box-office' />
+					<div className='h-1 bg-gradient-to-r from-transparent via-yellow-500 to-transparent my-10' />
+
+					<BrowseItems url='imdb/most-popular-movies' header='Most Popular Movies' linkToPage='/most-popular-movies' />
 				</div>
 
-				{loading ? (
-					<div className='flex justify-center items-center h-40'>
-						<p className='text-gray-500'>Loading movies...</p>
-					</div>
-				) : (
-					<MoviesPart movies={movies || []} />
-				)}
+				{/* TV Shows Section */}
+				<div>
+					<h1 className='text-4xl font-extrabold text-gray-900 dark:text-gray-100 mb-6'>
+						TV Shows
+					</h1>
+					<BrowseItems url='imdb/top250-tv' header='Top 250 TV Shows' linkToPage='/top-250-tv-shows' />
+					<div className='h-1 bg-gradient-to-r from-transparent via-blue-500 to-transparent my-10' />
+
+					<BrowseItems url='imdb/most-popular-tv' header='Most Popular TV Shows' linkToPage='/most-popular-tv-shows' />
+				</div>
+
+				{/* Indian Spotlight Section */}
+				<div>
+					<h1 className='text-4xl font-extrabold text-gray-900 dark:text-gray-100 mb-6'>
+						Indian Spotlight
+					</h1>
+					<BrowseItems url='imdb/india/top-rated-malayalam-movies' header='Top Rated Malayalam Movies' linkToPage='/top-rated-malayalam-movies' />
+					<div className='h-1 bg-gradient-to-r from-transparent via-red-500 to-transparent my-10' />
+
+					<BrowseItems url='imdb/india/upcoming' header='Most Anticipated New Indian Movies and Shows' linkToPage='/india/upcoming' />
+					<div className='h-1 bg-gradient-to-r from-transparent via-red-500 to-transparent my-10' />
+
+					<BrowseItems url='imdb/india/trending-tamil' header='Trending Tamil Movies' linkToPage='/india/trending-tamil' />
+					<div className='h-1 bg-gradient-to-r from-transparent via-red-500 to-transparent my-10' />
+
+					<BrowseItems url='imdb/india/trending-telugu' header='Trending Telugu Movies' linkToPage='/india/trending-telugu' />
+					<div className='h-1 bg-gradient-to-r from-transparent via-red-500 to-transparent my-10' />
+
+					<BrowseItems url='imdb/india/top-rated-tamil' header='Top Rated Tamil Movies' linkToPage='/india/top-rated-tamil' />
+					<div className='h-1 bg-gradient-to-r from-transparent via-red-500 to-transparent my-10' />
+
+					<BrowseItems url='imdb/india/top-rated-indian' header='Top Rated Indian Movies' linkToPage='/india/top-rated-indian' />
+				</div>
 			</div>
 		</>
 	)
