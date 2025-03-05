@@ -1,4 +1,5 @@
 import BrowseItems from '@/components/browse/BrowseItems'
+import Footer from '@/components/shared/Footer'
 import Navbar from '@/components/shared/Navbar'
 
 export default function MainPage() {
@@ -49,6 +50,8 @@ export default function MainPage() {
 					<BrowseItems url='imdb/india/top-rated-indian' header='Top Rated Indian Movies' linkToPage='/india/top-rated-indian' />
 				</div>
 			</div>
+
+			<Footer/>
 		</>
 	)
 }
